@@ -92,6 +92,7 @@ nav{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
   padding: 40px;
   gap: 30px;
 }

@@ -16,6 +16,13 @@ const FooterContainer = styled.footer`
   justify-content: center;
   width: 100%;
 
+  .footer-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
   h3{
     font-size: 1.3rem;
   }
@@ -43,7 +50,7 @@ const FooterContainer = styled.footer`
 export default function Footer() {
   return (
     <FooterContainer className='footer'>
-        <div><h3>Built by <span style={{color: "#f75b23"}}>Cynthia Amaehule &copy; 2023</span></h3></div>
+        <div className='footer-info'><h3>Built by <span style={{color: "#f75b23"}}>Cynthia Amaehule &copy; 2023</span></h3></div>
         <div className='footer-links'>
           <ul>
             <li><a href="https://www.facebook.com/"><FacebookIcon/></a></li>
