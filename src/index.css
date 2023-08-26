@@ -142,7 +142,7 @@ nav{
   align-items: center;
   justify-content: center;
   gap: 20px;
-  width: 50%;
+  width: 80%;
   padding: 40px 30px;
 }
 
@@ -162,18 +162,24 @@ nav{
   cursor: pointer;
 }
 
-.modalContainer > div{
+.modalContainer > form{
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.modalContainer > div input, .modalContainer > div textarea{
+.modalContainer > form div{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modalContainer > form div input, .modalContainer > form div textarea{
   padding: 5px 10px;
   font-family: inherit;
 }
 
-.modalContainer > button{
+.modalContainer > form button{
   background-color: transparent;
   color: #f75b23;
   padding: 5px 10px;
@@ -186,13 +192,25 @@ nav{
 .modalContainer a{
   background-color: #f75b23;
   color: white;
-  padding: 5px 10px;
+  padding: 8px 15px;
   border-radius: 3px;
+  text-align: center;
+}
+
+.modalContainer .error-message{
+  color: red;
 }
 
 @media screen and (min-width:800px){
   .modalContainer{
     width: 30%;
+  }
+}
+
+
+@media screen and (max-width:500px){
+  .modalContainer a{
+    width: 100%;
   }
 }
 

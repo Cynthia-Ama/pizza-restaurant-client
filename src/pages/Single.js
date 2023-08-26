@@ -32,6 +32,7 @@ const SingleContainer = styled.div`
     flex-direction: column;
     gap: 30px;
     align-items: center;
+    width: 100%;
   }
 
   .single-content h1{
@@ -76,6 +77,7 @@ const SingleContainer = styled.div`
     align-items: center;
     gap: 10px;
     margin-bottom: 10px;
+    width: 100%;
   }
 
   .single-content-extras > div{

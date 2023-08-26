@@ -43,7 +43,7 @@ const FooterContainer = styled.footer`
 export default function Footer() {
   return (
     <FooterContainer className='footer'>
-        <div><h3>Built by <span style={{color: "#f75b23"}}>Cynthia Amaehule</span></h3></div>
+        <div><h3>Built by <span style={{color: "#f75b23"}}>Cynthia Amaehule &copy; 2023</span></h3></div>
         <div className='footer-links'>
           <ul>
             <li><a href="https://www.facebook.com/"><FacebookIcon/></a></li>

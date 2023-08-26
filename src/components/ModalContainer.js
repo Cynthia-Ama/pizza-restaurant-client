@@ -11,6 +11,8 @@ export default function ModalContainer() {
   const method = 0
   const [orderId, setorderId] = useState()
   const [sentData, setsentData] = useState(false)
+  const [errorMessage, seterrorMessage] = useState()
+ 
 
   async function sendData(){
     try {
@@ -19,7 +21,8 @@ export default function ModalContainer() {
       const id = data._id
       setorderId(id)
     } catch (error) {
-      console.log(error)
+      const message = await error.response.data._message 
+      seterrorMessage(message)
     }
   }
 
@@ -27,28 +30,30 @@ export default function ModalContainer() {
     setsentData(true)
   }
 
-
   return (
-    <div className={"modal"}>
+    <div className="modal">
       <div className='modalContainer'>
         <h2>Your Orders</h2>
         <p>Your total is <span>${total}</span></p>
-        <div>
-          <label htmlFor="">Name Surname</label>
-          <input type="text" value={customername} onChange={(e) => setcustomername(e.target.value)} required/>
-        </div>
-        <div>
-          <label htmlFor="">Address</label>
-          <textarea name="" id="" cols="30" rows="10" value={address} onChange={(e) => setaddress(e.target.value)} required></textarea>
-        </div>
-        <div>
-          <label htmlFor="">Phone Number</label>
-          <input type="text" value={phoneNum} onChange={(e) => setphoneNum(e.target.value)} required/>
-        </div>
-        <button onClick={()=>{
-          sendData();
-          completeOrder()
-        }}>Order</button>
+        <form onSubmit={(e) => e.preventDefault()}>
+          <div>
+            <label>Name Surname</label>
+            <input type="text" value={customername} onChange={(e) => setcustomername(e.target.value)} required/>
+          </div>
+          <div>
+            <label>Address</label>
+            <textarea value={address}  cols="30" rows="10" onChange={(e) => setaddress(e.target.value)} required></textarea>
+          </div>
+          <div>
+            <label>Phone Number</label>
+            <input type="text" value={phoneNum} onChange={(e) => setphoneNum(e.target.value)} required/>
+          </div>
+          <button type="submit" onClick={()=>{
+            sendData();
+            completeOrder()
+          }}>Order</button>
+        </form>
+        {errorMessage && <p className='error-message'>{errorMessage}. <span>Please provide your details</span></p>}
         {sentData &&  <Link to={`/orders/${orderId}`}>Complete your order</Link>}
       </div>
     </div>

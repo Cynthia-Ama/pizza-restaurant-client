@@ -26,6 +26,7 @@ const CartContainer = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 40px;
+    width: 100%;
   }
 
   .cart-content-one{
@@ -63,6 +64,7 @@ const CartContainer = styled.div`
     flex-direction: column;
     gap: 40px;
     padding: 0 70px;
+    width: 100%;
   }
 
   .cart-totals > div{
@@ -127,6 +129,10 @@ const CartContainer = styled.div`
     }
 
     cursor: pointer;
+  }
+
+  .cart-content-two > span{
+    font-size: 16px;
   }
 
   @media only screen and (min-width:800px){

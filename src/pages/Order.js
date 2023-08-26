@@ -37,8 +37,9 @@ const OrderContainer = styled.div `
     .order-status{
         display: flex;
         align-items: center;
-        gap: 40px;
+        gap: 20px;
         margin-top: 20px;
+        max-width: 100%;
     }
 
     .order-status > div{
@@ -48,8 +49,8 @@ const OrderContainer = styled.div `
     }
 
     .order-status > div img{
-        width: 50px;
-        height: 50px;
+        width: 30px;
+        height: 30px;
         object-fit: cover;
     }
 
@@ -91,6 +92,17 @@ const OrderContainer = styled.div `
         .order-totals{
             align-items: center;
         } 
+
+        .order-status{
+            gap: 60px;
+        }
+
+        .order-status > div img{
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+        }
+    
       }
   
       @media only screen and (min-width:1000px){
